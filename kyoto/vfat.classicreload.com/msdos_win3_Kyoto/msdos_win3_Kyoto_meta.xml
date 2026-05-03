@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metadata>
+
+<dosbox_drive_d>emularity_win31/win311qt.zip</dosbox_drive_d>
+
+<dosbox_drive_e>msdos_win3_Kyoto/CDROM.zip</dosbox_drive_e>
+
+  <emulator>dosbox</emulator>
+  <emulator_ext>ZIP</emulator_ext>
+  <emulator_start>AUTORUN.BAT</emulator_start>
+  </metadata>
