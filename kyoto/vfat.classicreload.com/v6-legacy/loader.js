@@ -1167,7 +1167,10 @@ var Module = null;
                                        });
                         runner.start();
                       }
-                    });
+                    }).catch(function (err) {
+  console.error("Emulator failed to start:", err);
+  splash.setTitle("Failed to launch emulator.");
+});
        return this;
      };
      this.start = start;
