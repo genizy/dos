@@ -821,49 +821,6 @@ $(function() {
   Drupal.ajax.prototype.commands.modal_dismiss = Drupal.CTools.Modal.modal_dismiss;
 });
 
-})(jQuery);
-;
-(function($){
-  Drupal.theme.prototype.bounce_message = function () {
-    var html = '';
-    html += '<div id="ctools-modal" class="popups-box bounce-style">';
-    html += ' <div class="ctools-modal-content popup">';
-    html += ' <span class="popups-close"><a class="close" href="#">&#10006;</a></span>';
-    html += ' <div class="modal-msg">';
-    html += 'What others are playing';
-    html += ' </div>';
-    html += ' <div class="modal-scroll"><div id="modal-content" class="modal-content popups-body"></div></div>';
-    html += ' </div>';
-    html += '</div>';
-
-    return html;
-  }
-
-  Drupal.behaviors.exit_intent = {
-    attach: function() {
-      var cookies = document.cookie.split("; ");
-      var bounce = function (e) {
-        if (!e.toElement && !e.relatedTarget && e.clientY < 10) {
-          document.removeEventListener('mouseout', bounce);
-          $('#block-cr_views-bounce_message_link .ctools-modal-bounce-style').trigger('click');
-          document.cookie = "intent=true; path=/;";
-        }
-      }
-      var closePopup = function () {
-        Drupal.CTools.Modal.dismiss();
-      }
-      if (!cookies.includes("intent=true")) {
-        setTimeout(() => {
-           document.addEventListener('mouseout', bounce);
-        }, 3000);
-      }
-      $('#modalBackdrop').on('click', closePopup);
-      $('#modalContent .close').on('click', closePopup);
-    }
-  }
-
-})(jQuery);
-;
 ;(function () {
   var stickyBottomNotGameBanner = function () {
     var banner = document.querySelector('#underContent .view-header');

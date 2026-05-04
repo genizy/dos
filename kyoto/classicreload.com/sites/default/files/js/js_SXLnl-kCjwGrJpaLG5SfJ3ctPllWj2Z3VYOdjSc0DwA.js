@@ -178,7 +178,7 @@ jQuery(document).ready(function($){
       //}
     //}
   //}, 5 * 1000);
-  $.getJSON("/files/help/info-list.json", function (items) {
+  $.getJSON(window.base+"kyoto/classicreload.com/files/help/info-list.json", function (items) {
     items = items.reverse();
     var isActive = true;
     for (var i = 0; i < items.length; i++) {
